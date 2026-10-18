@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>给你的一封信 ♡</title>
+  <style>
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;overflow:hidden;color:#6d3146;font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:radial-gradient(circle at 20% 15%,#fff8fa 0 10%,transparent 35%),linear-gradient(135deg,#ffdbe5,#fff0f4 55%,#f8d8e5)}
+    .heart{position:fixed;color:#ef7d9e;opacity:.55;animation:float linear infinite;pointer-events:none}@keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-12vh) rotate(360deg)}}
+    main{min-height:100vh;display:grid;place-items:center;padding:24px}.card{width:min(92vw,440px);text-align:center;background:rgba(255,255,255,.78);border:2px solid #fff;border-radius:30px;box-shadow:0 18px 55px #b8688155;padding:38px 24px;backdrop-filter:blur(8px)}
+    .envelope{font-size:86px;cursor:pointer;filter:drop-shadow(0 10px 8px #d37d9955);animation:pulse 1.8s infinite}@keyframes pulse{50%{transform:scale(1.07)}}.hint{font-size:18px;letter-spacing:1px}.hidden{display:none}h1{font-size:28px;line-height:1.45;margin:0 0 22px}.bear{font-size:74px;margin:4px}
+    button{border:0;border-radius:999px;padding:14px 28px;font-size:18px;font-weight:bold;cursor:pointer;margin:13px 7px;box-shadow:0 5px 0 #c75b7e;transition:.2s}.yes{background:#f68cae;color:white}.no{background:#eee;color:#886b75;box-shadow:0 5px 0 #cdbfc3}.answer{font-size:20px;line-height:1.8;margin:20px 0 0}.signature{font-size:15px;color:#a96c80;margin-top:22px}
+  </style>
+</head>
+<body>
+  <span class="heart" style="left:8%;animation-duration:13s;font-size:24px">♥</span><span class="heart" style="left:26%;animation-duration:10s;font-size:17px">♥</span><span class="heart" style="left:72%;animation-duration:15s;font-size:28px">♥</span><span class="heart" style="left:90%;animation-duration:11s;font-size:19px">♥</span>
+  <main><section class="card">
+    <div id="cover"><div class="envelope" id="open">💌</div><p class="hint">点击打开给你的一封信 ♡</p></div>
+    <div id="letter" class="hidden"><div class="bear">🐱💗</div><h1>你愿意做我一生的挚爱吗？</h1><div id="buttons"><button class="yes" id="yes">我愿意 ♡</button><button class="no" id="no">再想想</button></div><div id="answer" class="answer hidden">太好了！<br>谢谢你一直在我身边。<br>往后的每一天，我都想和你一起走过。<div class="signature">—— 永远爱你的我 ♡</div></div></div>
+  </section></main>
+  <script>
+    const cover=document.querySelector('#cover'), letter=document.querySelector('#letter'), no=document.querySelector('#no'), yes=document.querySelector('#yes'), buttons=document.querySelector('#buttons'), answer=document.querySelector('#answer');
+    document.querySelector('#open').onclick=()=>{cover.classList.add('hidden');letter.classList.remove('hidden')};
+    no.onmouseenter=()=>{no.style.transform='translate('+(Math.random()*130-65)+'px,'+(Math.random()*90-45)+'px)'};
+    no.onclick=()=>{no.style.transform='translate('+(Math.random()*180-90)+'px,'+(Math.random()*120-60)+'px)'};
+    yes.onclick=()=>{buttons.classList.add('hidden');answer.classList.remove('hidden')};
+  </script>
+</body></html>
